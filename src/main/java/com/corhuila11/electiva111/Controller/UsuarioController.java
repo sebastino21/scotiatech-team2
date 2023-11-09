@@ -8,10 +8,7 @@ import com.corhuila11.electiva111.IService.IUsuarioService;
 import com.corhuila11.electiva111.entity.Usuario;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -30,14 +27,16 @@ public class UsuarioController extends BaseController <Usuario,IUsuarioService>{
             return ResponseEntity.internalServerError().body(new ApiResponseDto<List<IUsuarioDto>>(e.getMessage(), null, false));
         }
     }
+    
     @PostMapping("/InsertarDatos")
-    public ResponseEntity<ApiResponseDto<IInsertaDto>> save(@RequestBody IInsertaDto insertaDto) {
-        try {
-            return ResponseEntity.ok(new ApiResponseDto<IInsertaDto>("Datos guardados", service.saveInsertaDatosUser(insertaDto), true));
-        } catch (Exception e) {
-            return ResponseEntity.internalServerError().body(new ApiResponseDto<IInsertaDto>(e.getMessage(), null, false));
-        }
-    }
+	public ResponseEntity<ApiResponseDto<IInsertaDto>> saveInsertaDatosUser(@RequestBody IInsertaDto iInsertaDto) {
+		try {
+			service.saveInsertaDatosUser(iInsertaDto);
+			return ResponseEntity.ok(new ApiResponseDto<IInsertaDto>("Datos actualizados", null, true));
+		} catch (Exception e) {
+			return ResponseEntity.internalServerError().body(new ApiResponseDto<IInsertaDto>(e.getMessage(), null, false));
+		}
+	}
 
 
 }

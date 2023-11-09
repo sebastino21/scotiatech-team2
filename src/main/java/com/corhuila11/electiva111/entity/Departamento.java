@@ -8,10 +8,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "departamento")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-
 public class Departamento extends Auditoria {
 
 
@@ -25,6 +21,23 @@ public class Departamento extends Auditoria {
         private Pais paisId;
 
 
+		public String getNombre() {
+			return nombre;
+		}
 
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+
+		public Pais getPaisId() {
+			return paisId;
+		}
+
+
+		public void setPaisId(Pais paisId) {
+			this.paisId = paisId;
+		}
     }
 

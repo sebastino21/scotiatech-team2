@@ -23,5 +23,27 @@ public class Usuario extends Auditoria{
     @JoinColumn(name = "id_persona",referencedColumnName = "id")
     private Persona personaId;
 
+	public String getNombre() {
+		return nombre;
+	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+	public Persona getPersonaId() {
+		return personaId;
+	}
+
+	public void setPersonaId(Persona personaId) {
+		this.personaId = personaId;
+	}
 }

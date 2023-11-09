@@ -7,9 +7,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "ciudad")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Ciudad extends Auditoria {
 
 
@@ -20,6 +17,22 @@ public class Ciudad extends Auditoria {
     @ManyToOne
     @JoinColumn(name = "id_departamento")
     private Departamento departamentoId;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Departamento getDepartamentoId() {
+		return departamentoId;
+	}
+
+	public void setDepartamentoId(Departamento departamentoId) {
+		this.departamentoId = departamentoId;
+	}
 
 
 
@@ -44,6 +57,8 @@ public class Ciudad extends Auditoria {
      *     @OneToMany(mappedBy = "ciudadEntity",cascade = CascadeType.ALL)
      *     private List<PersonaEntity> personaEntity;
      */
+	
+	
 
 
 }

@@ -13,5 +13,5 @@ public interface IUsuarioService extends IBaseService <Usuario>{
 List <IUsuarioDto> getListPersonaUsuario();
 
 
-    IInsertaDto saveInsertaDatosUser(IInsertaDto iInsertaDto) throws Exception;
+    void saveInsertaDatosUser(IInsertaDto iInsertaDto) throws Exception;
 }
