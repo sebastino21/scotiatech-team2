@@ -19,7 +19,7 @@ public class ProductoCliente extends Auditoria {
     private Boolean estado;
 
     @Column(name = "numero_cuenta",nullable = false, unique = true, length = 50)
-    private String numerocuenta;
+    private String numeroCuenta;
 
     @ManyToOne
     @JoinColumn(name = "id_persona")

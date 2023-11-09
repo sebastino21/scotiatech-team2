@@ -36,29 +36,6 @@ public class Ciudad extends Auditoria {
 
 
 
-    /**
-     * duda sobre relacion
-     * @ManyToOne
-     *     @JoinColumn(name = "persona")
-     *      private Persona persona;
-     *
-     *
-     *        @OneToMany(mappedBy = "ciudad",cascade = CascadeType.ALL)
-     *     private List<Persona> persona;
-     */
-
-    /**
-     * cuando es de ciudad a persona
-     * @ManyToOne
-     *     @JoinColumn(name = "idPersona")
-     *     private PersonaEntity personaEntity;
-     *
-     * cuando es de persona a ciudad
-     *     @OneToMany(mappedBy = "ciudadEntity",cascade = CascadeType.ALL)
-     *     private List<PersonaEntity> personaEntity;
-     */
-	
-	
 
 
 }

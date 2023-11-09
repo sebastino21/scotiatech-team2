@@ -21,4 +21,6 @@ public interface IUsuarioRepository extends IBaseRepository <Usuario,Long> {
             nativeQuery = true)
     IInsertaDto saveInsertaDatosUser(@Param("iInsertaDto") IInsertaDto iInsertaDto) throws Exception;
 
+
+
 }

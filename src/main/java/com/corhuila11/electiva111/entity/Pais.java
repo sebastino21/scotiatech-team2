@@ -20,12 +20,7 @@ public class Pais extends Auditoria{
 		this.nombre = nombre;
 	}
 
-    /**
-     * relacion doble de pais a departamento
-     * @ManyToOne
-     *     @JoinColumn(name = "departamento")
-     *     private DepartamentoEntity departamentoEntity;
-     */
+
 
 
 }

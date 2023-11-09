@@ -17,7 +17,7 @@ public class Comentario extends Auditoria {
 
 
     @Column(name = "nombre_asesor",nullable = true, unique = false, length = 50)
-    private String nombreasesor;
+    private String nombreAsesor;
 
     @Column(name = "solucion",nullable = true, unique = false, length = 250)
     private String solucion;

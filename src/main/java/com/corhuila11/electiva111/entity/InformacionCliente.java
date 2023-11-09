@@ -14,13 +14,13 @@ public class InformacionCliente extends Auditoria {
 
 
     @Column(name = "numero_radicado",nullable = true, unique = true, length = 50)
-    private String numeroradicado;
+    private String numeroRadicado;
 
     @Column(name = "titulo",nullable = true, unique = false, length = 150)
     private String titulo;
 
     @Column(name = "tipo_solicitud",nullable = true, unique = false, length = 150)
-    private String tiposolicitud;
+    private String tipoSolicitud;
 
     @Column(name = "descripcion",nullable = true, unique = false, length = 200)
     private String descripcion;
@@ -29,7 +29,7 @@ public class InformacionCliente extends Auditoria {
     private Boolean estado;
 
     @Column(name = "duracion_servicio",nullable = true, unique = false, length = 200)
-    private String duracionservicio;
+    private String duracionServicio;
 
     @ManyToOne
     @JoinColumn(name = "id_producto_cliente")

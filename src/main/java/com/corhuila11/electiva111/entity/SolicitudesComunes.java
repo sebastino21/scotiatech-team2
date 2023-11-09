@@ -17,7 +17,7 @@ public class SolicitudesComunes extends Auditoria {
     private String descripcion;
 
     @Column(name = "posible_solucion",nullable = false, unique = false)
-    private String posiblesolucion;
+    private String posibleSolucion;
 
     @Column(name = "recomendacion",nullable = false, unique = false, length = 200)
     private String recomendacion;

@@ -44,14 +44,7 @@ public class Persona extends Auditoria{
     @ManyToOne
     @JoinColumn(name = "id_ciudad")
     private Ciudad ciudadId;
-    /**
-     * relacion de personas a usuario
-     *
-     * @ManyToOne
-     *     @JoinColumn(name = "usuario")
-     *     private UsuarioEntity usuarioEntity;
-     *
-     */
+
 
 	public String getPrimerNombre() {
 		return primerNombre;
