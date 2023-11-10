@@ -1,5 +1,6 @@
 package com.corhuila11.electiva111.Service;
 
+import com.corhuila11.electiva111.DTO.IProductoDto;
 import com.corhuila11.electiva111.IRepository.IBaseRepository;
 import com.corhuila11.electiva111.IRepository.ICiudadRepository;
 import com.corhuila11.electiva111.IRepository.IProductoRepository;
@@ -23,4 +24,9 @@ public class ProductoService extends BaseService <Producto> implements IProducto
 
     @Autowired
     private IProductoRepository repository;
+
+    @Override
+    public List<IProductoDto> getListProducto() {
+        return repository.getListProducto();
+    }
 }

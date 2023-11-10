@@ -1,14 +1,16 @@
 package com.corhuila11.electiva111.Controller;
 
-import com.corhuila11.electiva111.IService.ICiudadService;
+import com.corhuila11.electiva111.DTO.ApiResponseDto;
+import com.corhuila11.electiva111.DTO.IProductoDto;
+
 import com.corhuila11.electiva111.IService.IProductoService;
 import com.corhuila11.electiva111.entity.Producto;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -17,4 +19,13 @@ import java.util.Optional;
 public class ProductoController extends BaseController <Producto,IProductoService>{
 
     public ProductoController (IProductoService service) {super(service,"Producto");}
+
+    @GetMapping ("/get-list-producto")
+    public ResponseEntity<ApiResponseDto<List<IProductoDto>>> getListProducto() {
+        try {
+            return ResponseEntity.ok(new ApiResponseDto<List<IProductoDto>>("Datos obtenidos", service.getListProducto(), true));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(new ApiResponseDto<List<IProductoDto>>(e.getMessage(), null, false));
+        }
+    }
 }
