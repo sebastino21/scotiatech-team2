@@ -10,12 +10,12 @@ public interface IInsertaDto {
 	 String getDireccion();
 	 String getGenero();
 	 Boolean getState();
-	 String getTipoIdentificacion(); 
+	 String getTipoIdentificacion();
 	 String getIdentificacion(); 
 	 Long getCiudadId();
 	 
-	 String getNombre();
+	 String getNombreUsuario();
 	 String getContrasenia();
-	 Long getPersonaId();
+
 	 
 }

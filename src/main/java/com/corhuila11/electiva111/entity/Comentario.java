@@ -32,6 +32,43 @@ public class Comentario extends Auditoria {
     @JoinColumn(name = "id_informacion_cliente")
     private InformacionCliente informacionClienteId;
 
+    public String getNombreAsesor() {
+        return nombreAsesor;
+    }
 
+    public void setNombreAsesor(String nombreAsesor) {
+        this.nombreAsesor = nombreAsesor;
+    }
 
+    public String getSolucion() {
+        return solucion;
+    }
+
+    public void setSolucion(String solucion) {
+        this.solucion = solucion;
+    }
+
+    public String getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(String calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public String getSugerencia() {
+        return sugerencia;
+    }
+
+    public void setSugerencia(String sugerencia) {
+        this.sugerencia = sugerencia;
+    }
+
+    public InformacionCliente getInformacionClienteId() {
+        return informacionClienteId;
+    }
+
+    public void setInformacionClienteId(InformacionCliente informacionClienteId) {
+        this.informacionClienteId = informacionClienteId;
+    }
 }

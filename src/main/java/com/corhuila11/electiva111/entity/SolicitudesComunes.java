@@ -26,4 +26,35 @@ public class SolicitudesComunes extends Auditoria {
     @JoinColumn(name = "id_servicio")
     private Servicio servicioId;
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getPosibleSolucion() {
+        return posibleSolucion;
+    }
+
+    public void setPosibleSolucion(String posibleSolucion) {
+        this.posibleSolucion = posibleSolucion;
+    }
+
+    public String getRecomendacion() {
+        return recomendacion;
+    }
+
+    public void setRecomendacion(String recomendacion) {
+        this.recomendacion = recomendacion;
+    }
+
+    public Servicio getServicioId() {
+        return servicioId;
+    }
+
+    public void setServicioId(Servicio servicioId) {
+        this.servicioId = servicioId;
+    }
 }

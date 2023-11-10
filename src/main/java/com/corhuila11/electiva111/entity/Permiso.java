@@ -18,4 +18,20 @@ public class Permiso extends Auditoria{
 
     @Column(name = "estado", nullable = true, unique = false)
     private Boolean estado;
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
 }

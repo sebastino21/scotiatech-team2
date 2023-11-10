@@ -21,4 +21,20 @@ public class UsuarioRol extends Auditoria{
     @ManyToOne
     @JoinColumn(name = "id_rol")
     private Rol rolId;
+
+    public Usuario getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(Usuario usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public Rol getRolId() {
+        return rolId;
+    }
+
+    public void setRolId(Rol rolId) {
+        this.rolId = rolId;
+    }
 }

@@ -35,4 +35,60 @@ public class InformacionCliente extends Auditoria {
     @JoinColumn(name = "id_producto_cliente")
     private ProductoCliente productoClienteId;
 
+
+    public String getNumeroRadicado() {
+        return numeroRadicado;
+    }
+
+    public void setNumeroRadicado(String numeroRadicado) {
+        this.numeroRadicado = numeroRadicado;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getTipoSolicitud() {
+        return tipoSolicitud;
+    }
+
+    public void setTipoSolicitud(String tipoSolicitud) {
+        this.tipoSolicitud = tipoSolicitud;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
+
+    public String getDuracionServicio() {
+        return duracionServicio;
+    }
+
+    public void setDuracionServicio(String duracionServicio) {
+        this.duracionServicio = duracionServicio;
+    }
+
+    public ProductoCliente getProductoClienteId() {
+        return productoClienteId;
+    }
+
+    public void setProductoClienteId(ProductoCliente productoClienteId) {
+        this.productoClienteId = productoClienteId;
+    }
 }

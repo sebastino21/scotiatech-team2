@@ -17,5 +17,11 @@ public class Servicio extends Auditoria {
     @Column(name = "descripcion",nullable = true, unique = false)
     private String descripcion;
 
+    public String getDescripcion() {
+        return descripcion;
+    }
 
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }

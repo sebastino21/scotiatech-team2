@@ -1,6 +1,7 @@
 package com.corhuila11.electiva111.Service;
 
 import com.corhuila11.electiva111.DTO.IInsertaDto;
+import com.corhuila11.electiva111.DTO.ILoginDto;
 import com.corhuila11.electiva111.DTO.IUsuarioDto;
 import com.corhuila11.electiva111.IRepository.IBaseRepository;
 import com.corhuila11.electiva111.IRepository.ICiudadRepository;
@@ -55,4 +56,31 @@ public class UsuarioService extends BaseService <Usuario>  implements IUsuarioSe
     	
     	
     }
+
+    @Override
+    public List<ILoginDto> getLogin(String nombre, String contrasena) throws Exception{
+        List<ILoginDto> loginResults = repository.getLogin(nombre, contrasena);
+
+        if (loginResults.isEmpty()) {
+            throw new Exception("Usuario o la contraseña no son válidos");
+        }
+
+        boolean estado = verificarEstado(loginResults);
+
+        if (!estado) {
+            throw new Exception("La cuenta se encuentra deshabilitada");
+        }
+
+        return loginResults;
+    }
+
+    private boolean verificarEstado(List<ILoginDto> loginResults) {
+        for (ILoginDto loginDto : loginResults) {
+            if (!loginDto.getAutorizacion()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

@@ -26,5 +26,35 @@ public class Producto extends Auditoria{
     @JoinColumn(name = "id_servicio")
     private Servicio servicioId;
 
+    public Float getPrecio() {
+        return precio;
+    }
 
+    public void setPrecio(Float precio) {
+        this.precio = precio;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Servicio getServicioId() {
+        return servicioId;
+    }
+
+    public void setServicioId(Servicio servicioId) {
+        this.servicioId = servicioId;
+    }
 }

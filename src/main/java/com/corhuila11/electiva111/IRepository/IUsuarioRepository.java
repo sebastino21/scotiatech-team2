@@ -1,6 +1,7 @@
 package com.corhuila11.electiva111.IRepository;
 
 import com.corhuila11.electiva111.DTO.IInsertaDto;
+import com.corhuila11.electiva111.DTO.ILoginDto;
 import com.corhuila11.electiva111.DTO.IUsuarioDto;
 import com.corhuila11.electiva111.entity.Usuario;
 import org.springframework.data.jpa.repository.Modifying;
@@ -20,6 +21,13 @@ public interface IUsuarioRepository extends IBaseRepository <Usuario,Long> {
             "VALUES (:#{#iInsertaDto.state}, :#{#iInsertaDto.correoElectronico}, :#{#iInsertaDto.direccion}, :#{#iInsertaDto.genero}, :#{#iInsertaDto.identificacion}, :#{#iInsertaDto.primerApellido}, :#{#iInsertaDto.primerNombre}, :#{#iInsertaDto.segundoApellido}, :#{#iInsertaDto.segundoNombre}, :#{#iInsertaDto.tipoDocumento}, :#{#iInsertaDto.idCiudad})",
             nativeQuery = true)
     IInsertaDto saveInsertaDatosUser(@Param("iInsertaDto") IInsertaDto iInsertaDto) throws Exception;
+
+
+    @Query(value = "SELECT u.nombre AS Usuario, u.state AS autorizacion FROM usuario AS u WHERE u.nombre = :nombre AND u.contrasena = :contrasena", nativeQuery = true)
+    List<ILoginDto> getLogin(@Param("nombre") String nombre, @Param("contrasena") String contrasena);
+
+
+
 
 
 

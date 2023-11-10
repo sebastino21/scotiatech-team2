@@ -29,6 +29,35 @@ public class ProductoCliente extends Auditoria {
     @JoinColumn(name = "id_producto")
     private Producto productoId;
 
+    public Boolean getEstado() {
+        return estado;
+    }
 
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
 
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    public void setNumeroCuenta(String numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
+    }
+
+    public Persona getPersonaId() {
+        return personaId;
+    }
+
+    public void setPersonaId(Persona personaId) {
+        this.personaId = personaId;
+    }
+
+    public Producto getProductoId() {
+        return productoId;
+    }
+
+    public void setProductoId(Producto productoId) {
+        this.productoId = productoId;
+    }
 }

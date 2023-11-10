@@ -3,6 +3,7 @@ package com.corhuila11.electiva111.Controller;
 
 import com.corhuila11.electiva111.DTO.ApiResponseDto;
 import com.corhuila11.electiva111.DTO.IInsertaDto;
+import com.corhuila11.electiva111.DTO.ILoginDto;
 import com.corhuila11.electiva111.DTO.IUsuarioDto;
 import com.corhuila11.electiva111.IService.IUsuarioService;
 import com.corhuila11.electiva111.entity.Usuario;
@@ -37,6 +38,16 @@ public class UsuarioController extends BaseController <Usuario,IUsuarioService>{
 			return ResponseEntity.internalServerError().body(new ApiResponseDto<IInsertaDto>(e.getMessage(), null, false));
 		}
 	}
+
+
+    @GetMapping("get-login")
+    public ResponseEntity<ApiResponseDto<List<ILoginDto>>> getLogin(@RequestParam String nombre, @RequestParam String contrasena) {
+        try {
+            return ResponseEntity.ok(new ApiResponseDto<List<ILoginDto>>("Datos obtenidos", service.getLogin(nombre, contrasena), true));
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().body(new ApiResponseDto<List<ILoginDto>>(e.getMessage(), null, true));
+        }
+    }
 
 
 }

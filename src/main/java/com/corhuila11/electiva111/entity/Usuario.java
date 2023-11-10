@@ -13,7 +13,7 @@ import lombok.*;
 public class Usuario extends Auditoria{
 
 
-    @Column(name = "nombre",nullable = false, unique = false, length = 50)
+    @Column(name = "nombre",nullable = false, unique = true, length = 50)
     private String nombre;
 
     @Column(name = "contrasena",nullable = false, unique = false, length = 50)

@@ -18,6 +18,8 @@ public class Ciudad extends Auditoria {
     @JoinColumn(name = "id_departamento")
     private Departamento departamentoId;
 
+
+
 	public String getNombre() {
 		return nombre;
 	}
