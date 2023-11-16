@@ -23,7 +23,10 @@ public interface IUsuarioRepository extends IBaseRepository <Usuario,Long> {
     IInsertaDto saveInsertaDatosUser(@Param("iInsertaDto") IInsertaDto iInsertaDto) throws Exception;
 
 
-    @Query(value = "SELECT u.nombre AS Usuario, u.state AS autorizacion FROM usuario AS u WHERE u.nombre = :nombre AND u.contrasena = :contrasena", nativeQuery = true)
+    @Query(value = "SELECT u.nombre AS Usuario, u.state  AS autorizacion,r.nombre AS rol FROM usuario AS u \n" +
+            "INNER JOIN usuario_rol AS ur on u.id=ur.id_usuario\n" +
+            "INNER JOIN rol as r on r.id=ur.id_rol\n" +
+            "WHERE u.nombre = :nombre AND u.contrasena = :contrasena AND  r.state=true", nativeQuery = true)
     List<ILoginDto> getLogin(@Param("nombre") String nombre, @Param("contrasena") String contrasena);
 
 
