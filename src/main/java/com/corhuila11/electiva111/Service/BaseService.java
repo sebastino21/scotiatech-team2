@@ -38,6 +38,7 @@ public abstract class BaseService <T extends Auditoria> implements IBaseService<
     public T save(T entity) throws Exception{
         try {
             entity.setCreatedAt(LocalDateTime.now());
+            entity.setState(true);
             return getRepository().save(entity);
         } catch (Exception e) {
             // Captura la excepción
