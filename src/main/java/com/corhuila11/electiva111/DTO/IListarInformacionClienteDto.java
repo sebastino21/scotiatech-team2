@@ -1,7 +1,7 @@
 package com.corhuila11.electiva111.DTO;
 
 public interface IListarInformacionClienteDto {
-
+Integer getId();
 Boolean getestado_informacion_cliente();
 String gettipo_solicitud();
 String gettitulo();
